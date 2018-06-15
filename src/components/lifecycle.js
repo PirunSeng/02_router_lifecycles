@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Life extends Component {
+// class Life extends Component {
+class Life extends PureComponent {
   // steps/lifecycle
   // 1. get default props
   // 2. set default state
@@ -9,30 +11,30 @@ class Life extends Component {
   }
   // 3. before render
   componentWillMount(){
-    console.log('componentWillMount')
+    // console.log('componentWillMount')
     // document.querySelector('h3').style.color = 'red';
   }
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('componentWillUpdate')
+    // console.log('componentWillUpdate')
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate')
+    // console.log('componentDidUpdate')
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if(nextState.title === 'Something else')
-      return false;
-    return true;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+    // if(nextState.title === this.state.title)
+    //   return false;
+    // return true;
+  // }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps')
+    // console.log('componentWillReceiveProps')
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount')
+    // console.log('componentWillUnmount')
   }
 
   // 4. render jsx, render() is a default method.
@@ -52,7 +54,7 @@ class Life extends Component {
 
   // 5. after render
   componentDidMount(){
-    console.log('componentDidMount')
+    // console.log('componentDidMount')
     document.querySelector('h3').style.color = 'red';
   }
 }
