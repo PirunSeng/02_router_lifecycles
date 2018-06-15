@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Link, NavLink, Switch } from 'react-router-dom';
 // import { HashRouter, Route, Link } from 'react-router-dom';
 // import { MemoryRouter, Route, Link } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ import Home from './components/home';
 import Posts from './components/posts';
 import Profiles from './components/profiles';
 import PostItem from './components/post_item';
+import Life from './components/lifecycle';
 
 const App = () => {
   return(
@@ -24,12 +25,17 @@ const App = () => {
             activeClassName='selected'
             >Posts</NavLink><br/>
           <Link to='/profiles'>Profiles</Link><br/>
+          <Link to='/life'>Life</Link><br/>
         </header>
         <hr/>
-        <Route path='/' exact component={Home}/>
-        <Route path='/posts' exact component={Posts}/>
-        <Route path='/posts/:id' component={PostItem}/>
-        <Route path='/profiles' component={Profiles}/>
+        // Switch, sends less specific route to the bottom
+        <Switch>
+          <Route path='/profiles' component={Profiles}/>
+          <Route path='/posts/:id' component={PostItem}/>
+          <Route path='/posts' component={Posts}/>
+          <Route path='/life' component={Life}/>
+          <Route path='/' component={Home}/>
+        </Switch>
       </div>
     </BrowserRouter>
     // </MemoryRouter>
